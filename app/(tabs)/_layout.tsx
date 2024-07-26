@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { Text } from "react-native";
+import { Platform, Text } from "react-native";
 
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
@@ -15,7 +15,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarStyle: {
-          height: 55,
+          height: Platform.OS === "android" ? 55 : 90,
         },
       }}
     >
