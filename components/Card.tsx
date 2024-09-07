@@ -26,7 +26,6 @@ export default function Card() {
           <Entypo
             onPress={() => {
               setModalVisible(true);
-              console.log("here");
             }}
             name="chevron-small-down"
             size={24}
