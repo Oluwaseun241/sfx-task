@@ -14,8 +14,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <LinearGradient
       style={{ flex: 1 }}
@@ -79,13 +81,16 @@ export default function HomeScreen() {
             />
             <Text>Card</Text>
           </View>
-          <View style={{ alignItems: "center", gap: 8 }}>
+          <TouchableOpacity
+            onPress={() => router.push("referral")}
+            style={{ alignItems: "center", gap: 8 }}
+          >
             <Image
               style={styles.icon}
               source={require("@/assets/images/referral.png")}
             />
             <Text>Referral</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <AdsView />
         <View
