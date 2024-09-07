@@ -1,9 +1,11 @@
 import { Colors } from "@/constants/Colors";
 import { Feather, Entypo } from "@expo/vector-icons";
-import { Link } from "expo-router";
 import { View, Text, TouchableOpacity } from "react-native";
+import { useState } from "react";
+import BalanceModal from "./modal/balanceModal";
 
 export default function Card() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View
       style={{
@@ -21,16 +23,15 @@ export default function Card() {
         <View style={{ flexDirection: "row", paddingTop: 4 }}>
           <Text style={{ fontWeight: "600", fontSize: 18 }}>900,000</Text>
           <Text style={{ fontSize: 10, marginTop: 8 }}>USD</Text>
-          <Link href="modal" asChild>
-            <Entypo
-              onPress={() => {
-                console.log("here");
-              }}
-              name="chevron-small-down"
-              size={24}
-              color="black"
-            />
-          </Link>
+          <Entypo
+            onPress={() => {
+              setModalVisible(true);
+              console.log("here");
+            }}
+            name="chevron-small-down"
+            size={24}
+            color="black"
+          />
         </View>
         <View style={{ padding: 4 }}>
           <TouchableOpacity
@@ -48,6 +49,10 @@ export default function Card() {
         </View>
         <View />
       </View>
+      <BalanceModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 }
