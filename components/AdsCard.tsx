@@ -35,7 +35,7 @@ const AdsView = () => {
 const styles = StyleSheet.create({
   container: {
     height: 140,
-    padding: 15,
+    padding: 20,
     marginTop: 15,
   },
   slide: {

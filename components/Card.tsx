@@ -1,5 +1,6 @@
 import { Colors } from "@/constants/Colors";
 import { Feather, Entypo } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import { View, Text, TouchableOpacity } from "react-native";
 
 export default function Card() {
@@ -20,7 +21,16 @@ export default function Card() {
         <View style={{ flexDirection: "row", paddingTop: 4 }}>
           <Text style={{ fontWeight: "600", fontSize: 18 }}>900,000</Text>
           <Text style={{ fontSize: 10, marginTop: 8 }}>USD</Text>
-          <Entypo name="chevron-small-down" size={24} color="black" />
+          <Link href="modal" asChild>
+            <Entypo
+              onPress={() => {
+                console.log("here");
+              }}
+              name="chevron-small-down"
+              size={24}
+              color="black"
+            />
+          </Link>
         </View>
         <View style={{ padding: 4 }}>
           <TouchableOpacity
@@ -30,7 +40,7 @@ export default function Card() {
               width: 100,
               borderRadius: 15,
               alignItems: "center",
-              marginLeft: 50,
+              marginLeft: 95,
             }}
           >
             <Text style={{ color: Colors.dark.text }}>Add money</Text>
