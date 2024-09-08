@@ -1,23 +1,16 @@
-import { StyleSheet, View, Text, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, View, Text, Platform, SafeAreaView } from "react-native";
 
 export default function Wallet() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>Wallet</Text>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: "#808080",
-    bottom: -90,
-    left: -35,
-    position: "absolute",
-  },
-  titleContainer: {
-    flexDirection: "row",
-    gap: 8,
+  container: {
+    flex: 1,
+    alignItems: "center",
   },
 });

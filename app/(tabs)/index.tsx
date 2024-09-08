@@ -104,13 +104,16 @@ export default function HomeScreen() {
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <Text style={{ fontWeight: 200 }}>Bills payment</Text>
-            <View style={{ flexDirection: "row", gap: 3 }}>
+            <TouchableOpacity
+              onPress={() => router.push("editBill")}
+              style={{ flexDirection: "row", gap: 3 }}
+            >
               <Text>Edit</Text>
               <Image
                 source={require("@/assets/images/edit.png")}
                 style={{ height: 18, width: 20 }}
               />
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.separator} />
           <View

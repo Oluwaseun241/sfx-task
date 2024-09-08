@@ -86,6 +86,8 @@ export default function Referral() {
           </View>
         </View>
       </View>
+      {/* Referral code */}
+      <View></View>
     </View>
   );
 }

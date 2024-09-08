@@ -135,10 +135,11 @@ const styles = StyleSheet.create({
   amount: {
     fontSize: 20,
     fontWeight: "bold",
-    marginRight: 10,
+    marginRight: 2,
   },
   currency: {
     fontSize: 10,
+    marginTop: 5,
     color: Colors.light.text,
   },
 });
