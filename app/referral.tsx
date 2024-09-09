@@ -1,6 +1,6 @@
 import { Colors } from "@/constants/Colors";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 
 export default function Referral() {
   return (
@@ -18,7 +18,6 @@ export default function Referral() {
       <Text style={styles.smallText}>
         You will receive your reward once your friend
       </Text>
-
       {/* step */}
       <View style={styles.stepContainer}>
         <View style={{ alignItems: "center" }}>
@@ -44,7 +43,6 @@ export default function Referral() {
           </Text>
         </View>
       </View>
-
       {/* Withdrawable Earnings Card */}
       <View style={styles.withdrawCard}>
         <View style={styles.row}>
@@ -66,7 +64,6 @@ export default function Referral() {
           <Text style={styles.redeemText}>Redeem</Text>
         </TouchableOpacity>
       </View>
-
       {/* Earnings and Referral */}
       <View style={styles.statsContainer}>
         {/* Total Earnings */}
@@ -86,8 +83,29 @@ export default function Referral() {
           </View>
         </View>
       </View>
-      {/* Referral code */}
-      <View></View>
+      <View style={styles.referralContainer}>
+        {/* Referral Code Box */}
+        <View style={styles.referralBox}>
+          <Text style={styles.referralText}>Your referral code</Text>
+          <View style={styles.codeRow}>
+            <Text style={styles.referralCode}>tFh273</Text>
+            {/* Copy Icon */}
+            <TouchableOpacity
+              onPress={() => {
+                /* Add copy to clipboard functionality */
+              }}
+            >
+              <Feather name="copy" size={20} color="black" />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* Share Button */}
+        <TouchableOpacity style={styles.shareButton}>
+          <Ionicons name="share-social-outline" size={20} color="#fff" />
+          <Text style={styles.shareText}>Share</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -206,5 +224,51 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 5,
     color: "#000",
+  },
+  referralContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+    backgroundColor: "#fff",
+  },
+  referralBox: {
+    flexDirection: "column",
+    borderColor: "#C4C4C4",
+    borderWidth: 1,
+    borderStyle: "dashed",
+    borderRadius: 10,
+    padding: 15,
+    flex: 0.7,
+    marginRight: 10,
+  },
+  referralText: {
+    color: "#9E9E9E",
+    fontSize: 12,
+  },
+  codeRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 5,
+  },
+  referralCode: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#000",
+  },
+  shareButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.light.background,
+    padding: 15,
+    borderRadius: 10,
+    flex: 0.25,
+    justifyContent: "center",
+  },
+  shareText: {
+    color: "#fff",
+    marginLeft: 5,
+    fontSize: 16,
+    fontWeight: "500",
   },
 });

@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 25,
+    marginTop: 5,
     paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0,
   },
   text: {
