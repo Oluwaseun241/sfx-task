@@ -1,6 +1,6 @@
 import { Colors } from "@/constants/Colors";
 import { Feather, Entypo } from "@expo/vector-icons";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Platform } from "react-native";
 import { useState } from "react";
 import BalanceModal from "./modal/balanceModal";
 
@@ -40,7 +40,7 @@ export default function Card() {
               width: 100,
               borderRadius: 15,
               alignItems: "center",
-              marginLeft: 95,
+              marginLeft: Platform.OS === "android" ? 60 : 97,
             }}
           >
             <Text style={{ color: Colors.dark.text }}>Add money</Text>
